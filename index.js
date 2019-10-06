@@ -12,5 +12,14 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
-}
+  return tutorials.map( tutorial => {
+    let words = tutorial.split(' ') //splits each title into individual words
+    let tcWords = 
+      words.map( word => word.charAt(0).toUpperCase() + word.slice(1)) //finds character with index 0. makes that uppercase
+    let tcSentence = tcWords.join(' ')                              // the .slice method takes a start arg and optional end arg. so the "+ word.slice(1) means add the upper case char to the rest of the word that starts at 1 index(second letter) and isnt given an end arg so just goes to the end of the word
+    return tcSentence
+  })
+
+
+  }
+
